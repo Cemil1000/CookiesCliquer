@@ -1,3 +1,6 @@
 .cookie-btn:hover{
     cursor: pointer;
 }
+body{
+    background-color: grey;
+}

@@ -8,7 +8,9 @@ export const BonusCookies = (props) => {
     setValueAutoClick,
     setIsValueAutoClick,
     priceValueClick,
-    priceAutoClick,score,setScore
+    priceAutoClick,
+    score,
+    setScore,
   } = props;
 
   function setAutoClick() {
@@ -16,38 +18,32 @@ export const BonusCookies = (props) => {
       setIsValueAutoClick();
     }
     setValueAutoClick();
-    setScore(score-priceAutoClick)
+    setScore(score - priceAutoClick);
   }
 
   function addBonusClick() {
     setValueClick();
-    setScore(score-priceValueClick)
+    setScore(score - priceValueClick);
   }
-  
-  const btnValueClick= score>= priceValueClick ?  (<button
-    onClick={() => {
-      addBonusClick()
-    }}
-  >
-    x2
-  </button>) : (<button disabled >
-    x2
-  </button>)
 
-const btnAutoClick= score>= priceAutoClick ?  (<button
-    onClick={() => {
-      setAutoClick();
-    }}
-  >
-    +1
-  </button>) : (<button disabled >
-    +1
-  </button>)
+  const btnValueClick =
+    score >= priceValueClick ? (
+      <button onClick={() => { addBonusClick(); }}>x2</button>
+    ) : (
+      <button disabled>x2</button>
+    );
+
+  const btnAutoClick =
+    score >= priceAutoClick ? (
+      <button onClick={() => { setAutoClick(); }}>+1</button>
+    ) : (
+      <button disabled>+1</button>
+    );
 
   return (
     <>
       {btnValueClick}
-    {btnAutoClick}
+      {btnAutoClick}
     </>
   );
 };

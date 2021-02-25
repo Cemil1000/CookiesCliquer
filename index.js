@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BonusCookies } from "./component/BonusCookies";
 import { useInterval } from "react-use-timeout";
@@ -13,10 +13,9 @@ const App = (props) => {
   const [priceValueClick, setPriceValueClick] = useState(10);
   const [priceAutoClick, setPriceAutoClick] = useState(50);
 
-  if(isValueAutoClick){
-    useInterval( setScore(score + valueAutoClick), 1000);
+  if (isValueAutoClick) {
+    useInterval(setScore(score + valueAutoClick), 1000);
   }
-
 
   return (
     <div>
@@ -42,7 +41,9 @@ const App = (props) => {
         priceValueClick={priceValueClick}
         priceAutoClick={priceAutoClick}
         score={score}
-        setScore={(param)=>{setScore(param)}}
+        setScore={(param) => {
+          setScore(param);
+        }}
       />
     </div>
   );
